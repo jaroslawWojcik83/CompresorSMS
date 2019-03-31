@@ -13,17 +13,16 @@ public class Main {
         System.out.println("Input the price of a sms:");
         String unitPrice = scanner.nextLine();
 
-        BigDecimal BDUnitPrice = new BigDecimal(unitPrice);
-
         Paginator paginator = new Paginator(smsLength);
         CostCalculate calculator = new CostCalculate(new BigDecimal(unitPrice));
         Compresor compresor = new Compresor();
 
-        int countSMS = paginator.paginate(text).length;
-
         String compressedMessage = compresor.compres(text);
         String[] paginatedMessage = paginator.paginate(compressedMessage);
+
+        int countSMS = paginator.paginate(compressedMessage).length ;
+
         System.out.println("Your codded and splited message: " + Arrays.toString(paginatedMessage));
-        System.out.println("Cost of your message(s): " + calculator.calculate(countSMS, BDUnitPrice ));
+        System.out.println("Cost of your message(s): " + calculator.calculate(countSMS));
     }
 }

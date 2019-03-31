@@ -12,7 +12,7 @@ public class CostCalculateTest {
         CostCalculate costCalculate = new CostCalculate(unitPrice);
         int countSms = 3;
         BigDecimal expected = BigDecimal.valueOf(7.5);
-        assertEquals(expected, costCalculate.calculate(countSms, unitPrice));
+        assertEquals(expected, costCalculate.calculate(countSms));
     }
 
 }

@@ -2,7 +2,7 @@ import java.math.BigDecimal;
 
 public class CostCalculate {
 
-    private BigDecimal price = BigDecimal.ZERO;
+    private BigDecimal price;
 
     private BigDecimal itemCost  = BigDecimal.ZERO;
 
@@ -10,7 +10,7 @@ public class CostCalculate {
         price = unitPrice;
     }
 
-    BigDecimal calculate(int countSms, BigDecimal price) {
+    BigDecimal calculate(int countSms) {
 
         itemCost  = price.multiply(new BigDecimal(countSms));
 
