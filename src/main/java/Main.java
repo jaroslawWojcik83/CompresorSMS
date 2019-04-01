@@ -15,9 +15,10 @@ public class Main {
 
         Paginator paginator = new Paginator(smsLength);
         CostCalculate calculator = new CostCalculate(new BigDecimal(unitPrice));
-        Compresor compresor = new Compresor();
 
-        String compressedMessage = compresor.compres(text);
+        Compressor compresor = new Compressor();
+
+        String compressedMessage = compresor.compress(text);
         String[] paginatedMessage = paginator.paginate(compressedMessage);
 
         int countSMS = paginator.paginate(compressedMessage).length ;

@@ -3,55 +3,55 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class CompresorTest {
+public class CompressorTest {
 
-    private Compresor compresor;
+    private Compressor compressor;
 
     @Before
     public void setUp() throws  Exception {
-        compresor = new Compresor();
+        compressor = new Compressor();
     }
 
     @Test
-    public void compres() {
+    public void compress() {
         String SMS = "ala ma kota";
         String expected = "AlaMaKota";
-        assertEquals(expected, compresor.compres(SMS));
+        assertEquals(expected, compressor.compress(SMS));
     }
 
     @Test
-    public void uncompres() {
+    public void uncompress() {
         String SMS = "AlaMaKotaŻet";
         String expected = "ala ma kota żet";
-        assertEquals(expected, compresor.uncompres(SMS));
+        assertEquals(expected, compressor.uncompress(SMS));
     }
 
     @Test
     public void smsIsNullCompresSMS() {
         String SMS = null;
         String expected = "";
-        assertEquals(expected, compresor.compres(SMS));
+        assertEquals(expected, compressor.compress(SMS));
     }
 
     @Test
     public void smsIsNullUncompresSMS() {
         String SMS = null;
         String expected = "";
-        assertEquals(expected, compresor.uncompres(SMS));
+        assertEquals(expected, compressor.uncompress(SMS));
     }
 
     @Test
     public void smsIsEmptyCompresSMS() {
         String SMS = "";
         String expected = "";
-        assertEquals(expected, compresor.compres(SMS));
+        assertEquals(expected, compressor.compress(SMS));
     }
 
     @Test
     public void smsIsEmptyUncompresSMS() {
         String SMS = "";
         String expected = "";
-        assertEquals(expected, compresor.uncompres(SMS));
+        assertEquals(expected, compressor.uncompress(SMS));
     }
 
 
@@ -59,14 +59,14 @@ public class CompresorTest {
     public void smsIsMixCaseCompresSMS() {
         String SMS = "AlA Ma koTA";
         String expected = "AlaMaKota";
-        assertEquals(expected, compresor.compres(SMS));
+        assertEquals(expected, compressor.compress(SMS));
     }
 
     @Test
     public void smsIsMixCaseUncompresSMS() {
         String SMS = "AlaMaKoTA";
         String expected = "ala ma ko t a";
-        assertEquals(expected, compresor.uncompres(SMS));
+        assertEquals(expected, compressor.uncompress(SMS));
     }
 
 

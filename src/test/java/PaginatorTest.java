@@ -5,7 +5,6 @@ import static org.junit.Assert.assertEquals;
 public class PaginatorTest {
 
 
-
     @Test
     public void pagiator() {
         Paginator page = new Paginator(3);
